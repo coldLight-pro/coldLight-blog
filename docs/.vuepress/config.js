@@ -1,3 +1,5 @@
+const dayjs = require('dayjs')
+
 module.exports = {
     title: 'coldLight-blog',
     description: 'coldLight个人博客',
@@ -68,5 +70,32 @@ module.exports = {
     },
     markdown: {
         lineNumbers: true
-    }
+    },
+    plugins: [
+        '@vuepress/plugin-back-to-top',
+        '@vuepress/plugin-medium-zoom',
+        ['demo-block', {
+            settings: {
+                jsLib: [
+                    'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.14.1/index.js',
+                    'https://adpage.lilithcdn.com/dap-ui/dap.umd.min.js'
+                ],
+                cssLib: [
+                    'https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.14.1/theme-chalk/index.css',
+                    'https://adpage.lilithcdn.com/dap-ui/dap.css'
+                ],
+                vue: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js',
+                jsfiddle: false,
+                codepen: true,
+                horizontal: false,
+            }
+        }],
+        ['@vuepress/last-updated', {
+            transformer: (timestamp, lang) => {
+                dayjs.locale(lang)
+                return dayjs(timestamp).format('YYYY-MM-DD')
+            }
+        }]
+    ],
 };
