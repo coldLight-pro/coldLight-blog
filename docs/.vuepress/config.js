@@ -29,7 +29,6 @@ module.exports = {
         searchMaxSuggestions: 10,
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/' },
             { text: 'External', link: 'https://google.com' },
             {
                 text: 'Languages',
@@ -52,18 +51,42 @@ module.exports = {
         sidebarDepth: 0,
         sidebar: 'auto', // 自动生成侧栏
         sidebar: [
-            '/',
-            '/guide/',
+            'MD介绍',
             {
-                title: '分组1', // 必要的
+                title: '前端', // 必要的
                 path: '', // 可选的, 标题的跳转链接，应为绝对路径且必须存在
                 collapsable: false, // 可选的, 默认值是 true,
-                sidebarDepth: 1, // 可选的, 默认值是 1
-                initialOpenGroupIndex: -1, // 可选的, 默认值是 0
+                // sidebarDepth: 2, // 可选的, 默认值是 1
+                // initialOpenGroupIndex: -1, // 可选的, 默认值是 0
                 children: [
-                    '/',
-                    '/guide/',
-                    // '/config'
+                    {
+                        title: 'javascript',
+                        children: [
+                            '/前端/vue/vue2',
+                            '/前端/vue/vue3',
+                        ]
+                    },
+                    {
+                        title: 'vue',
+                        children: [
+                            '/前端/vue/vue2',
+                            '/前端/vue/vue3',
+                        ]
+                    },
+                    {
+                        title: 'webpack',
+                        children: [
+                            '/前端/vue/vue2',
+                            '/前端/vue/vue3',
+                        ]
+                    },
+                    {
+                        title: 'node',
+                        children: [
+                            '/前端/vue/vue2',
+                            '/前端/vue/vue3',
+                        ]
+                    }
                 ],
             }
         ]      
@@ -72,6 +95,7 @@ module.exports = {
         lineNumbers: true
     },
     plugins: [
+        '@vuepress/nprogress',
         '@vuepress/plugin-back-to-top',
         '@vuepress/plugin-medium-zoom',
         ['demo-block', {

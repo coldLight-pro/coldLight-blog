@@ -3,8 +3,10 @@ home: true
 heroImage: /logo.jpg
 heroText: null
 tagline: 个人博客
-actionText: 快速上手 →
-actionLink: /guide/
+actionText: GO →
+actionLink: /MD介绍
+meta:
+- title: 个人博客zhg
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
